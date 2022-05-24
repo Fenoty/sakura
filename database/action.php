@@ -4,10 +4,9 @@ function SelectAllFromBD(){
     foreach($pdo->query("SELECT * FROM public.goods WHERE quantity > 0 ORDER BY id LIMIT 30") as $row) {
         if ($row['quantity'] == 0) {
             echo
-            '<div class="goods-list">
-                    <img class="bg-like" src="/sakura/img/buttons/whiteheart.svg" alt="Избранное">
-                    <img src="/sakura/img/goods/'.$row["image"].'" alt="">
-                    <a><span>'.$row["description"].'</span></a>
+            '<div class="goods-list" onclick="location.href=`/sakura/assets/item_name.php?id='.$row['id'].'`;">
+                    <img onclick="location.href=`/sakura/assets/item_name.php?id='.$row['id'].'`;" src="/sakura/img/goods/'.$row["image"].'" alt="">
+                    <a href="/sakura/assets/item_name.php?id='.$row['id'].'">'.$row["description"].'</a>
                     <p class="back-goods-price">'.$row["price"].' руб.</p>
                     <button class="zero-quantity">Нет в наличии</button>
                 </div>';
@@ -15,11 +14,10 @@ function SelectAllFromBD(){
         else {
             echo
             '<div class="goods-list">
-                    <img class="bg-like" src="/sakura/img/buttons/whiteheart.svg" alt="Избранное">
-                    <img src="/sakura/img/goods/'.$row["image"].'" alt="">
-                    <a><span>'.$row["description"].'</span></a>
+                    <img onclick="location.href=`/sakura/assets/item_name.php?id='.$row['id'].'`;" src="/sakura/img/goods/'.$row["image"].'" alt="">
+                    <a href="/sakura/assets/item_name.php?id='.$row['id'].'">'.$row["description"].'</a>
                     <p class="back-goods-price">'.$row["price"].' руб.</p>
-                    <button class="buy-flower">Купить</button>
+                    <button onclick="location.href=`/sakura/assets/item_name.php?id='.$row['id'].'`;" class="buy-flower">Купить</button>
                 </div>';
         }
     }
@@ -59,7 +57,7 @@ function countPagesOnSort($type){
     $price_to = isset($_GET['price_to']) ? $_GET['price_to'] : '9999';
     $zaprosForPages = "SELECT count(*) FROM public.goods WHERE typeofgood = '$type'";
     if ($color!=0 && isset($_GET['color'])) {
-        $zaprosForPages = $zaprosForPages." AND color = ".$color;
+        $zaprosForPages = $zaprosForPages." AND color = '".$color."'";
     }
     if ($povod!=0 && isset($_GET["povod"])) {
         $zaprosForPages = $zaprosForPages." AND povod = '".$povod."'";
@@ -102,12 +100,12 @@ function SelectAllItemsOnPage($type){
     $povod = isset($_GET['povod']) ? $_GET['povod'] : '';
     $color = isset($_GET['color']) ? $_GET['color'] : '';
     $price_at = isset($_GET['price_at']) ? $_GET['price_at'] : 1;
-    $price_to = isset($_GET['price_to']) ? $_GET['price_to'] : '9999';
+    $price_to = isset($_GET['price_to']) ? $_GET['price_to'] : 999999;
     $zaprosForPages = "SELECT count(*) FROM public.goods WHERE typeofgood = '$type'";
     $zapros = "SELECT * FROM public.goods WHERE typeofgood = '$type'";
     if ($color!=0 && isset($_GET['color'])) {
-        $zapros = $zapros." AND color = ".$color;
-        $zaprosForPages = $zaprosForPages." AND color = ".$color;
+        $zapros = $zapros." AND color = '".$color."'";
+        $zaprosForPages = $zaprosForPages." AND color = '".$color."'";
     }
     if ($povod!=0 && isset($_GET["povod"])) {
         $zapros = $zapros." AND povod = '".$povod."'";
@@ -133,9 +131,8 @@ function SelectAllItemsOnPage($type){
             if ($row['quantity'] < 1) {
                 echo 
                 '<div class="goods-list">
-                        <img class="bg-like" src="/sakura/img/buttons/whiteheart.svg" alt="Избранное">
-                        <img src="/sakura/img/goods/'.$row["image"].'" alt="">
-                        <a><span>'.$row["description"].'</span></a>
+                        <img onclick="location.href=`/sakura/assets/item_name.php?id='.$row['id'].'`;" src="/sakura/img/goods/'.$row["image"].'" alt="">
+                        <a href="/sakura/assets/item_name.php?id='.$row['id'].'">'.$row["description"].'</a>
                         <p class="back-goods-price">'.$row["price"].' руб.</p>
                         <button class="zero-quantity">Нет в наличии</button>
                     </div>';
@@ -143,11 +140,10 @@ function SelectAllItemsOnPage($type){
             else {
                 echo 
                 '<div class="goods-list">
-                        <img class="bg-like" src="/sakura/img/buttons/whiteheart.svg" alt="Избранное">
-                        <img src="/sakura/img/goods/'.$row["image"].'" alt="">
-                        <a><span>'.$row["description"].'</span></a>
+                        <img onclick="location.href=`/sakura/assets/item_name.php?id='.$row['id'].'`;" src="/sakura/img/goods/'.$row["image"].'" alt="">
+                        <a href="/sakura/assets/item_name.php?id='.$row['id'].'">'.$row["description"].'</a>
                         <p class="back-goods-price">'.$row["price"].' руб.</p>
-                        <button class="buy-flower">Купить</button>
+                        <button onclick="location.href=`/sakura/assets/item_name.php?id='.$row['id'].'`;" class="buy-flower">Купить</button>
                     </div>';
             }
             
@@ -158,9 +154,8 @@ function SelectAllItemsOnPage($type){
         if ($row['quantity'] == 0) {
             echo
             '<div class="goods-list">
-                    <img class="bg-like" src="/sakura/img/buttons/whiteheart.svg" alt="Избранное">
-                    <img src="/sakura/img/goods/'.$row["image"].'" alt="">
-                    <a><span>'.$row["description"].'</span></a>
+                    <img onclick="location.href=`/sakura/assets/item_name.php?id='.$row['id'].'`;" src="/sakura/img/goods/'.$row["image"].'" alt="">
+                    <a href="/sakura/assets/item_name.php?id='.$row['id'].'">'.$row["description"].'</a>
                     <p class="back-goods-price">'.$row["price"].' руб.</p>
                     <button class="zero-quantity">Нет в наличии</button>
                 </div>';
@@ -168,11 +163,10 @@ function SelectAllItemsOnPage($type){
         else {
             echo
             '<div class="goods-list">
-                    <img class="bg-like" src="/sakura/img/buttons/whiteheart.svg" alt="Избранное">
-                    <img src="/sakura/img/goods/'.$row["image"].'" alt="">
-                    <a><span>'.$row["description"].'</span></a>
+                    <img onclick="location.href=`/sakura/assets/item_name.php?id='.$row['id'].'`;" src="/sakura/img/goods/'.$row["image"].'" alt="">
+                    <a href="/sakura/assets/item_name.php?id='.$row['id'].'">'.$row["description"].'</a>
                     <p class="back-goods-price">'.$row["price"].' руб.</p>
-                    <button class="buy-flower">Купить</button>
+                    <button onclick="location.href=`/sakura/assets/item_name.php?id='.$row['id'].'`;" class="buy-flower">Купить</button>
                 </div>';
         }
     }  
@@ -223,5 +217,92 @@ function PagesAdd($total){
     }
 }
 
+function search_goods(){
+    global $pdo;
+    $search_text = mb_strtolower($_GET['search']);
+    $attribute = isset($_GET['sort']) ? $_GET['sort'] : 'id';
+    $sort = isset($_GET['order']) ? $_GET['order'] : 'ASC';
+    if (isset($_GET['povod'])) {
+        $povod = isset($_GET['povod']) ? $_GET['povod'] : '';
+        $color = isset($_GET['color']) ? $_GET['color'] : '';
+        $price_at = isset($_GET['price_at']) ? $_GET['price_at'] : 1;
+        $price_to = isset($_GET['price_to']) ? $_GET['price_to'] : 999999;
+        $zaprosForSearch = "";
+        if ($color!=0 && isset($_GET['color'])) {
+            $zaprosForSearch = $zaprosForSearch." AND color = '".$color."'";
+        }
+        if ($povod!=0 && isset($_GET["povod"])) {
+            $zaprosForSearch = $zaprosForSearch." AND povod = '".$povod."'";
+        }
+        if (!$price_at=='') {
+            $zaprosForSearch = $zaprosForSearch." AND price >= ".$price_at;
+        }
+        if (!$price_to=='') {
+            $zaprosForSearch = $zaprosForSearch." AND price <= ".$price_to;
+        }
+    }
+    //проверка существования товара
+    if (isset($_GET['povod']) && isset($_GET['search'])) {
+        foreach($pdo->query("SELECT count(*) FROM public.goods WHERE LOWER(description) LIKE '%$search_text%' $zaprosForSearch") as $count) {
+            $countStr =  $count["count"];
+        }
+        if ($countStr < 1) {
+            echo '<div class="goods-null null-atr">Товара(ов) по заданным фильтрам не найдены :(</div>';
+        }
+        else{
+            foreach($pdo->query("SELECT * FROM public.goods WHERE LOWER(description) LIKE '%$search_text%' $zaprosForSearch ORDER BY $attribute $sort") as $row) {
+                if ($row['quantity'] == 0) {
+                    echo
+                    '<div class="goods-list">
+                            <img onclick="location.href=`/sakura/assets/item_name.php?id='.$row['id'].'`;" src="/sakura/img/goods/'.$row["image"].'" alt="">
+                            <a href="/sakura/assets/item_name.php?id='.$row['id'].'">'.$row["description"].'</a>
+                            <p class="back-goods-price">'.$row["price"].' руб.</p>
+                            <button class="zero-quantity">Нет в наличии</button>
+                        </div>';
+                }
+                else {
+                    echo
+                    '<div class="goods-list">
+                            <img onclick="location.href=`/sakura/assets/item_name.php?id='.$row['id'].'`;" src="/sakura/img/goods/'.$row["image"].'" alt="">
+                            <a href="/sakura/assets/item_name.php?id='.$row['id'].'">'.$row["description"].'</a>
+                            <p class="back-goods-price">'.$row["price"].' руб.</p>
+                            <button onclick="location.href=`/sakura/assets/item_name.php?id='.$row['id'].'`;" class="buy-flower">Купить</button>
+                        </div>';
+                }
+            }  
+        }
+    }
+    elseif (isset($_GET['search']) && !isset($_GET['povod'])) {
+        foreach($pdo->query("SELECT count(*) FROM public.goods WHERE LOWER(description) LIKE '%$search_text%'") as $count) {
+            $countStr =  $count["count"];
+        }
+        if ($countStr < 1) {
+            echo '<div class="goods-null null-atr">Товара(ов) с таким названием не найдено :(</div>';
+        }
+        else{
+            foreach($pdo->query("SELECT * FROM public.goods WHERE LOWER(description) LIKE '%$search_text%' ORDER BY $attribute $sort") as $row) {
+                if ($row['quantity'] == 0) {
+                    echo
+                    '<div class="goods-list">
+                            <img onclick="location.href=`/sakura/assets/item_name.php?id='.$row['id'].'`;" src="/sakura/img/goods/'.$row["image"].'" alt="">
+                            <a href="/sakura/assets/item_name.php?id='.$row['id'].'">'.$row["description"].'</a>
+                            <p class="back-goods-price">'.$row["price"].' руб.</p>
+                            <button class="zero-quantity">Нет в наличии</button>
+                        </div>';
+                }
+                else {
+                    echo
+                    '<div class="goods-list">
+                            <img onclick="location.href=`/sakura/assets/item_name.php?id='.$row['id'].'`;" src="/sakura/img/goods/'.$row["image"].'" alt="">
+                            <a href="/sakura/assets/item_name.php?id='.$row['id'].'">'.$row["description"].'</a>
+                            <p class="back-goods-price">'.$row["price"].' руб.</p>
+                            <button onclick="location.href=`/sakura/assets/item_name.php?id='.$row['id'].'`;" class="buy-flower">Купить</button>
+                        </div>';
+                }
+            }  
+        }
+        
+    }
+}
 
 ?>

@@ -6,6 +6,7 @@ if (!isset($_GET['admin'])) {
     <script src="script/chief-slider.js"></script>
     <script src="script/animation/animate.js"></script>
     <script src="script/index.js"></script>
+    <script src="/sakura/script/animation/buttonsanimate.js"></script>
     ';
 }
 else {
@@ -192,7 +193,7 @@ else {
                     <option '.checking('svadba',getArray()['povod'],'povod').' value="svadba">Свадьба</option>
                     <option '.checking('svidanie',getArray()['povod'],'povod').' value="svidanie">Свидание</option>
                     <option '.checking('yubilei',getArray()['povod'],'povod').' value="yubilei">Юбилей</option>
-                    <option '.checking('night',getArray()['povod'],'povod').' value="night">Ночь</option>
+                    <option '.checking('night',getArray()['povod'],'povod').' value="night">Классика</option>
                     <option '.checking('udivlenie',getArray()['povod'],'povod').' value="udivlenie">Удивить</option>
                 </select>
                 </td>
@@ -274,7 +275,7 @@ else {
                     <option value="svadba">Свадьба</option>
                     <option value="svidanie">Свидание</option>
                     <option value="yubilei">Юбилей</option>
-                    <option value="night">Ночь</option>
+                    <option value="night">Классика</option>
                     <option value="udivlenie">Удивить</option>
                 </select>
                 </td>

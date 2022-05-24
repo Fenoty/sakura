@@ -1,7 +1,4 @@
-//клики по страницам
-let pages = document.querySelectorAll(".pages");
-let goods_main = document.querySelector("#goods-main");
-let show = document.querySelectorAll('.show');
+
 
 document.querySelector('#logo').addEventListener('click', ()=>{
     window.location.href = '/sakura/index.php';

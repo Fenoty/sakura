@@ -12,6 +12,7 @@
 </head>
 <body>
     <?php 
+        include 'database/config.php';
         include 'assets/header.php';
     ?>  
     
@@ -24,18 +25,18 @@
                     <div class="slider__item">
                         <div class="centered">
                             Букет для свидания<br>
-                            <a href="/sakura/pages/kategories/buket.php?page=1&sort=description&order=ASC&price_at=&price_to=&povod=svidanie&color=0" class="button-slider">Выбрать</a>
+                            <a href="/sakura/assets/item_name.php?id=10" class="button-slider">Выбрать</a>
                         </div>
                     </div>
                     <div class="slider__item">
                         <div class="centered">
                             Цвет страсти<br>
-                            <a href="/sakura/pages/kategories/buket.php?page=1&sort=description&order=ASC&price_at=&price_to=&povod=0&color=5" class="button-slider">Выбрать</a>
+                            <a href="/sakura/pages/kategories/buket.php?page=1&sort=description&order=ASC&price_at=&price_to=&povod=0&color=Красный" class="button-slider">Выбрать</a>
                         </div>
                     </div>
                     <div class="slider__item">
                         <div class="centered">
-                            Японские растения<br>
+                            Бонсай<br>
                             <a href="/sakura/pages/kategories/japanflowers.php?page=1" class="button-slider">Выбрать</a>
                         </div>
                     </div>
@@ -84,7 +85,7 @@
                 <h2>Композиции</h2>
             </div>
             <div class="background-category-block japanflowers">
-                <h2>Японские растения</h2>
+                <h2>Бонсай</h2>
             </div>
             <div class="background-category-block roomflowers">
                 <h2>Комнатные растения</h2>
@@ -95,7 +96,6 @@
             <div id="goods-main">
                 <div class="centering">
                     <?php 
-                        include 'database/config.php';
                         include 'database/action.php';
                         
                         SelectAllFromBD();
@@ -104,17 +104,9 @@
             </div>
         </div>
     </main>
-
-
-
-
     <?php 
         include 'assets/footer.php';
         include 'database/admin.php';
     ?>  
-
-
-    <!-- <script src="script/animation/animate-slider.js"></script> -->
-
 </body>
 </html>

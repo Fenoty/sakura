@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Японские растения</title>
-    <link rel="stylesheet" href="/sakura/style/nouislider.min.css">
+    <title>Бонсай</title>
     <link rel="stylesheet" href="/sakura/style/style.css">
     <link rel="stylesheet" href="/sakura/style/chief-slider.css">
     <link rel="stylesheet" href="/sakura/style/animate.css">
@@ -17,7 +16,7 @@
         include $_SERVER['DOCUMENT_ROOT'].'/sakura/assets/header.php';
     ?>  
     <main>
-        <p class="metka">Японские растения</p>
+        <p class="metka">Бонсай</p>
             <?php 
                 include $_SERVER['DOCUMENT_ROOT'].'/sakura/assets/minisort.php';
             ?>  
@@ -41,6 +40,7 @@
     ?>  
 
     <script src="/sakura/script/jquery-3.6.0.min.js"></script>
+    <script src="/sakura/script/animation/buttonsanimate.js"></script>
     <script src="../js/pagginator.js"></script>
 </body>
 </html>

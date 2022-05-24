@@ -10,6 +10,9 @@ $options = array(
     PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
 );
-$pdo = new PDO($dsn, $user, $pass, $options);
-
+try {
+    $pdo = new PDO($dsn, $user, $pass, $options);
+}catch(PDOException $e) {
+    echo 'Ошибка: Не подключено' . $e->getMessage();
+}
 

@@ -7,7 +7,7 @@
                 </tr>
                 <tr>
                     <td><img class="footer-icons" src="/sakura/img/buttons/message.svg"></td>
-                    <td colspan="2"><a class="phone-footer" href="mailto:evocracoon@mail.ru">evocracoon@mail.ru</a></td>
+                    <td colspan="2"><a class="phone-footer" href="mailto:sakura-flowwwers@gmail.com">sakura-flowwwers@gmail.com</a></td>
                 </tr>
                 <tr>
                     <td><img class="footer-icons" src="/sakura/img/buttons/phone.svg"></td>
@@ -37,13 +37,13 @@
             <div class="right-side">
                 <table>
                     <tr><th><h2>О НАС</h2></th></tr>
-                    <tr><td><a href="">Контакты</a></td></tr>
-                    <tr><td><a href="">Доставка</a></td></tr>
-                    <tr><td><a href="">Как купить</a></td></tr>
-                    <tr><td><a href="">Как оплатить</a></td></tr>
+                    <tr><td><a href="/sakura/pages/another/contacts.php">Контакты</a></td></tr>
+                    <tr><td><a href="/sakura/pages/another/delivery.php">Доставка</a></td></tr>
+                    <tr><td><a href="/sakura/pages/another/howbuy.php">Как купить</a></td></tr>
+                    <tr><td><a href="/sakura/pages/another/howpurchase.php">Как оплатить</a></td></tr>
                     
                 </table>
             </div>
         </div>
-        <span>2022</span><span> © www.sakuraflowers.ru</span>
+       
     </footer>

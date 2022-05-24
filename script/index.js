@@ -15,6 +15,3 @@ document.querySelector('.roomflowers').addEventListener('click', ()=>{
 document.querySelector('#logo').addEventListener('click', ()=>{
     window.location.href = '/sakura/index.php';
 });
-
-
-
