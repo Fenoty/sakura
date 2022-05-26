@@ -29,8 +29,8 @@
                 <table>
                     <tr><th><h2>КАТАЛОГ</h2></th></tr>
                     <tr><td><a href="/sakura/pages/kategories/buket.php?page=1">Букеты</a></td></tr>
+                    <tr><td><a href="/sakura/pages/kategories/japanflowers.php?page=1">Бонсай</a></td></tr>
                     <tr><td><a href="/sakura/pages/kategories/kompozitsii.php?page=1">Композиции</a></td></tr>
-                    <tr><td><a href="/sakura/pages/kategories/japanflowers.php?page=1">Японские растения</a></td></tr>
                     <tr><td><a href="/sakura/pages/kategories/roomflowers.php?page=1">Комнатные растения</a></td></tr>
                 </table>
             </div>

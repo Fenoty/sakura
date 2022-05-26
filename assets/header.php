@@ -9,8 +9,28 @@
         <table id="elements">
             <tr>
                 <td><img class="Search" src="/sakura/img/buttons/Search.svg"></td>
-                <td><img class="User" src="/sakura/img/buttons/User.svg"></td>
                 <td><img class="ShoppingCart" src="/sakura/img/buttons/ShoppingCart.svg"></td>
+                <td>
+                    <?php
+                        include $_SERVER['DOCUMENT_ROOT'].'/sakura/database/config.php';
+                        global $pdo;
+                        if (isset($_COOKIE['password_cookie_token'])) { 
+                            $user=$pdo->query("SELECT * FROM public.user WHERE password_cookie_token='" . $_COOKIE["password_cookie_token"] . "'")->fetch(PDO::FETCH_ASSOC);
+                            $name=mb_strtoupper(mb_substr($user['fio'],0,1)).mb_strtoupper(mb_substr(strstr($user['fio'],' '), 1, 1));
+                            if (strlen($name)<2) {
+                                echo '<div class="user_link">'.mb_strtoupper(mb_substr($user['fio'],0,1)).'</div>';
+                            }
+                            else{
+                                echo '<div class="user_link">'.$name.'</div>';
+                            }
+                        }
+                        else{
+                            echo '<img class="User" src="/sakura/img/buttons/User.svg">';
+                        }
+                    ?>
+                    <!-- <img class="User" src="/sakura/img/buttons/User.svg"> -->
+                </td>
+                
             </tr>
         </table>
     </div>

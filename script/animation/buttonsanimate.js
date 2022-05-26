@@ -13,13 +13,21 @@ search_button.addEventListener('click', ()=>{
     }
 });
 
+if (document.querySelector('.User')) {
+    document.querySelector('.User').addEventListener('click',()=>{
+        window.location.href = '/sakura/pages/menus/auth.php';
+    });
+}
+else{
+    document.querySelector('.user_link').addEventListener('click',()=>{
+        window.location.href = '/sakura/pages/menus/auth.php';
+    });
+}
 
-document.querySelector('.User').addEventListener('click',()=>{
-    window.location.href = '/sakura/pages/menus/auth.php';
-});
 document.querySelector('.ShoppingCart').addEventListener('click',()=>{
     window.location.href = '/sakura/pages/menus/cart.php';
 });
+
 if(document.URL.indexOf("/sakura/pages/menus/registration.php") >= 0){ 
     $(".reg__phone").mask("+7 (999) 999-99-99");
 

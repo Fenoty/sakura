@@ -114,6 +114,7 @@ header{
             padding: 0.2em 0.2em 0 0.2em;
             cursor: pointer;
             border-bottom: 1px solid $main_color;
+            text-align: center;
             &:hover{
                 opacity: 1;
                 border-bottom: 1px solid black;
@@ -149,7 +150,7 @@ header{
     }
     #elements{
         align-items: center;
-        letter-spacing: 0.6em;
+        // letter-spacing: 0.6em;
     }
 }
 
@@ -1363,4 +1364,16 @@ footer{
 }
 .hide{
     display: none;
+}
+.user_link{
+    font-family: $main_font;
+    padding: 0 0.3em;
+    margin: 0 auto;
+    margin-bottom: 0.1em;
+    text-align: center;
+    font-size: 1.5em;
+    border: 1px solid black;
+    // border-radius: 50%;
+    background-color: black;
+    color: white;
 }

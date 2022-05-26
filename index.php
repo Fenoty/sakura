@@ -106,7 +106,11 @@
     </main>
     <?php 
         include 'assets/footer.php';
-        include 'database/admin.php';
+        
     ?>  
+    <script src="script/chief-slider.js"></script>
+    <script src="script/animation/animate.js"></script>
+    <script src="script/index.js"></script>
+    <script src="/sakura/script/animation/buttonsanimate.js"></script>
 </body>
 </html>

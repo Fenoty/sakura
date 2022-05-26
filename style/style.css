@@ -145,6 +145,7 @@ header .search-list__name {
   padding: 0.2em 0.2em 0 0.2em;
   cursor: pointer;
   border-bottom: 1px solid #fbcdcf;
+  text-align: center;
 }
 
 .header-flex__main-container table td:hover {
@@ -190,7 +191,6 @@ header .search-list__name {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  letter-spacing: 0.6em;
 }
 
 main {
@@ -1714,5 +1714,17 @@ footer .phone-footer {
 
 .hide {
   display: none;
+}
+
+.user_link {
+  font-family: "Century Gothic", Arial, sans-serif;
+  padding: 0 0.3em;
+  margin: 0 auto;
+  margin-bottom: 0.1em;
+  text-align: center;
+  font-size: 1.5em;
+  border: 1px solid black;
+  background-color: black;
+  color: white;
 }
 /*# sourceMappingURL=style.css.map */

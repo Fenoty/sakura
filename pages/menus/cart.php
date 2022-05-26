@@ -46,7 +46,7 @@
                     global $pdo;
                     global $setval;
                     $cart_goods = $pdo->query("SELECT * FROM public.user WHERE password_cookie_token = '".$_COOKIE['password_cookie_token']."'")->fetch(PDO::FETCH_ASSOC);
-                    if ($cart_goods['cart_goods'] == '{}') {
+                    if ($cart_goods['cart_goods'] == '{}' || $cart_goods['cart_goods'] == '') {
                         echo '
                         <div class="cart__empty">
                             <p>Ваша корзина пуста<br/>
@@ -96,7 +96,7 @@
                         $name = $_POST['cart_name']='' ? $_POST['cart_name'] : $user['fio'];
                         $email = $_POST['cart_email']='' ? $_POST['cart_email'] : $user['login'];
                         $phone = $_POST['cart_phone']='' ? $_POST['cart_phone'] : $user['phone'];
-                        $address = $_POST['cart_address']='' ? $_POST['cart_address'] : $user['address'];
+                        $address = ($_POST['cart_address']='' ? $_POST['cart_address'] : $user['address']) ? $user['address'] : '';
                         $pdo->query("INSERT INTO public.orders (profile, fio, email, phone, date_order, address, id_goods, quantity, total_price) VALUES ('$login','$name','$email','$phone','$date','$address','$field_id','$field_quantity',$tot)");
                         $g=0;
                         foreach ($array_id as $element){
